@@ -12,6 +12,7 @@
     "dev": "next dev --turbopack -p 3737",
     "dev:webpack": "next dev -p 3737",
     "build": "next build",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  // Standalone output is for the Docker image; Vercel builds its own bundle.
+  ...(process.env.VERCEL ? {} : { output: "standalone" }),
   devIndicators: false,
   async headers() {
     return [
